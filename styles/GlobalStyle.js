@@ -4,16 +4,12 @@ import { normalize } from "styled-normalize";
 export const GlobalStyle = createGlobalStyle`
   ${normalize}
 
-  * {
-    box-sizing: border-box;
-  }
-
   html,
   body {
-    padding: 0;
-    margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
       Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    margin: 0;
+    padding: 0 1em;
   }
 
   a {
@@ -26,8 +22,8 @@ export const GlobalStyle = createGlobalStyle`
       color-scheme: dark;
     }
     body {
-      color: white;
       background: black;
+      color: white;
     }
   }
 `;
