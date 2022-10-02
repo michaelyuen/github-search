@@ -2,7 +2,6 @@ import { HTMLInputTypeAttribute } from "react";
 import { StyledInput } from "./styles";
 
 export interface InputProps {
-  ariaLabel?: string;
   disabled?: boolean;
   name?: string;
   isInvalid?: boolean;
