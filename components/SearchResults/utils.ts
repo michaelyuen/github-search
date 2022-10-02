@@ -9,10 +9,10 @@ export const normalizeRepos = (
   }
 
   return data.repos.nodes.map((repo) => ({
-    description: repo.description,
+    description: repo.descriptionHTML,
     id: repo.id,
     license: repo.licenseInfo?.name ?? null,
-    name: repo.name,
+    name: repo.nameWithOwner,
     stars: repo.stargazerCount,
     url: repo.url,
   }));

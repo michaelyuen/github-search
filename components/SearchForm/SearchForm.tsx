@@ -1,15 +1,31 @@
 import { SearchFormContainer } from "./styles";
-import { Input } from "../Input";
+import { Input, InputProps } from "../Input";
+import { FormProps } from "../Form";
 
 export interface SearchFormProps {
+  name?: FormProps["name"];
+  noValidate?: FormProps["noValidate"];
+  onChange?: InputProps["onChange"];
+  onSubmit?: FormProps["onSubmit"];
+  query: string;
   title: string;
 }
 
-export const SearchForm: React.FC<SearchFormProps> = ({ title }) => {
+export const SearchForm: React.FC<SearchFormProps> = ({
+  onChange,
+  onSubmit,
+  query,
+  title,
+  ...rest
+}) => {
   return (
-    <SearchFormContainer>
+    <SearchFormContainer
+      name="GitHub Search Form"
+      onSubmit={onSubmit}
+      {...rest}
+    >
       <h3>{title}</h3>
-      <Input />
+      <Input name="advanced text search" onChange={onChange} value={query} />
     </SearchFormContainer>
   );
 };

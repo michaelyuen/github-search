@@ -6,12 +6,12 @@ const searchQuery = gql`
     repos: search(first: 10, query: $query, type: REPOSITORY) {
       nodes {
         ... on Repository {
-          description
+          descriptionHTML
           id
           licenseInfo {
             name
           }
-          name
+          nameWithOwner
           stargazerCount
           url
         }
@@ -37,10 +37,10 @@ interface License {
 }
 
 interface Repository {
-  description: string | null;
+  descriptionHTML: string;
   id: string;
   licenseInfo: License | null;
-  name: string;
+  nameWithOwner: string;
   stargazerCount: number;
   url: string;
 }

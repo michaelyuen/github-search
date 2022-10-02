@@ -24,7 +24,12 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 - [ ] Write basic unit tests -- red, green, refactor
 - [ ] Write basic cypress tests -- red, green, refactor
 - [x] Add simple api implementation
-  - [ ] query on page load
-  - [ ] query on search enter
-- [ ] Add query param support
-- [ ] Persist on refresh -- sessionStorage?
+  - [x] query on page load
+  - [x] query on search enter
+- [x] Add query param support
+  - [ ] Validation when reading?
+- [x] Persist on refresh -- sessionStorage?
+  - [ ] This works based on SSR. Can I cache in some way?
+- [ ] Validate input in onChange
+- [ ] SearchForm -- loading, initial message, error message
+- [ ] isLoading support

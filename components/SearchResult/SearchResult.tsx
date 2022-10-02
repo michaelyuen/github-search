@@ -1,3 +1,4 @@
+import React from "react";
 import {
   License,
   NameAndDescription,
@@ -6,7 +7,7 @@ import {
 } from "./styles";
 
 export interface SearchResult {
-  description: string | null;
+  description: string;
   id: string;
   license: string | null;
   name: string;
@@ -29,7 +30,7 @@ export const SearchResult: React.FC<SearchResult> = ({
             {name}
           </a>
         </h3>
-        {description && <p>{description}</p>}
+        <div dangerouslySetInnerHTML={{ __html: description }} />
       </NameAndDescription>
       <Stars>
         <p>Stars:</p>
