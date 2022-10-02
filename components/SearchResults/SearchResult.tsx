@@ -1,15 +1,9 @@
-import { SearchResultsContainer } from "./SearchResults.styles";
+import { SearchResultsContainer } from "./styles";
+import { SearchResult } from "../SearchResult";
 
 export interface SearchResultsProps {
   noResultsMessage: string;
-  results?: Array<{
-    description: string;
-    fork: boolean;
-    license: string;
-    name: string;
-    stars: number;
-    url: string;
-  }>;
+  results?: SearchResult[];
   title: string;
 }
 
@@ -23,8 +17,10 @@ export const SearchResults: React.FC<SearchResultsProps> = ({
     <SearchResultsContainer>
       <h3>{title}</h3>
       {!hasResults && <p>{noResultsMessage}</p>}
-      {hasResults && results.map((result, i) => <p key={i}>i am a result</p>)}
+      {hasResults &&
+        results.map((result, i) => (
+          <SearchResult key={result.id} {...result} />
+        ))}
     </SearchResultsContainer>
   );
 };
-export { SearchResultsContainer };

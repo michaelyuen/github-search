@@ -1,4 +1,4 @@
-import { SearchFormContainer } from "./SearchForm.styles";
+import { SearchFormContainer } from "./styles";
 import { Input } from "../Input";
 
 export interface SearchFormProps {
@@ -13,4 +13,3 @@ export const SearchForm: React.FC<SearchFormProps> = ({ title }) => {
     </SearchFormContainer>
   );
 };
-export { SearchFormContainer };

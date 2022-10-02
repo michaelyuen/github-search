@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { StyledInput } from "../Input";
+import { breakpoints } from "../../styles/breakpoints";
 
 export const SearchFormContainer = styled.div`
   display: flex;
@@ -10,7 +11,7 @@ export const SearchFormContainer = styled.div`
     flex-grow: 1;
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: ${breakpoints.md}) {
     h3 {
       margin-right: 6em;
     }

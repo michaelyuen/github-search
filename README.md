@@ -18,4 +18,13 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## To Do
 
-- [ ] Create search result
+- [x] Create search result component
+- [ ] Add react testing library
+- [ ] Add cypress
+- [ ] Write basic unit tests -- red, green, refactor
+- [ ] Write basic cypress tests -- red, green, refactor
+- [x] Add simple api implementation
+  - [ ] query on page load
+  - [ ] query on search enter
+- [ ] Add query param support
+- [ ] Persist on refresh -- sessionStorage?
