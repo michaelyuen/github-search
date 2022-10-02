@@ -24,7 +24,7 @@ export const SearchForm: React.FC<SearchFormProps> = ({
       onSubmit={onSubmit}
       {...rest}
     >
-      <h3>{title}</h3>
+      <h2>{title}</h2>
       <Input
         aria-label="Search using GitHub's advanced search syntax"
         onChange={onChange}

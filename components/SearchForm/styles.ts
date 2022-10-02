@@ -13,7 +13,7 @@ export const SearchFormContainer = styled(Form)`
   }
 
   @media (min-width: ${breakpoints.md}) {
-    h3 {
+    h2 {
       margin-right: 6em;
     }
   }

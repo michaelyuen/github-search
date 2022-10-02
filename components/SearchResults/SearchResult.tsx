@@ -15,7 +15,7 @@ export const SearchResults: React.FC<SearchResultsProps> = ({
   const hasResults = results && results.length > 0;
   return (
     <SearchResultsContainer>
-      <h3>{title}</h3>
+      <h2>{title}</h2>
       {!hasResults && <p>{noResultsMessage}</p>}
       {hasResults &&
         results.map((result, i) => (
