@@ -11,11 +11,7 @@ jobs:
       # Install NPM dependencies, cache them correctly
       # and run all Cypress tests
       - name: Cypress run
-        uses: cypress-io/github-action@v4.2.0
-        # report machine parameters
-      - run: yarn cypress info
-      - run: node --version
-      - run: node -p 'os.cpus()'
-      - run: yarn lint
-      - run: yarn test:ci
-      - run: yarn e2e:headless
+        uses: cypress-io/github-action@v4
+        with:
+          build: yarn build
+          start: yarn e2e:headless
