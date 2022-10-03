@@ -6,3 +6,4 @@ describe("Search 'user:atom'", () => {
     cy.url().should("include", "?q=atom");
   });
 });
+export {};

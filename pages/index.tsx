@@ -67,6 +67,7 @@ const Home: NextPage<HomeProps> = ({
           title="Advanced Search"
         />
         <SearchResults
+          aria-label="Search Results"
           noResultsMessage="No Results..."
           results={results}
           title="Search Results"
