@@ -12,8 +12,10 @@ jobs:
       # and run all Cypress tests
       - name: Cypress run
         uses: cypress-io/github-action@v4.2.0
-        with:
-          build: yarn build
-          start: yarn start
-      - name: Cypress Dashboard
-        run: npx cypress run --record --key a7be6727-1a2e-493a-85de-8f57fb4c8494
+        # report machine parameters
+      - run: yarn cypress info
+      - run: node --version
+      - run: node -p 'os.cpus()'
+      - run: yarn lint
+      - run: yarn test:ci
+      - run: yarn e2e:headless
