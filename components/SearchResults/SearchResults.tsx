@@ -1,9 +1,10 @@
 import { SearchResultsContainer } from "./styles";
-import { SearchResult } from "../SearchResult";
+import { SearchResult, SearchResultProps } from "../SearchResult";
+import { ComponentProps } from "../types";
 
-export interface SearchResultsProps {
+export interface SearchResultsProps extends ComponentProps {
   noResultsMessage: string;
-  results?: SearchResult[];
+  results?: SearchResultProps[];
   title: string;
 }
 
@@ -11,10 +12,11 @@ export const SearchResults: React.FC<SearchResultsProps> = ({
   noResultsMessage,
   results,
   title,
+  ...props
 }) => {
   const hasResults = results && results.length > 0;
   return (
-    <SearchResultsContainer>
+    <SearchResultsContainer {...props}>
       <h2>{title}</h2>
       {!hasResults && <p>{noResultsMessage}</p>}
       {hasResults &&

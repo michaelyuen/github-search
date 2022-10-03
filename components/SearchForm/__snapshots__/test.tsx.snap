@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchForm matches snapshot 1`] = `
+<div>
+  <form
+    aria-label="mock aria label"
+    class="sc-gswNZR sc-dkrFOg wQExl"
+    name="GitHub Search Form"
+    novalidate=""
+  >
+    <h2>
+      GitHub Search Form
+    </h2>
+    <input
+      aria-label="Search using GitHub's advanced search syntax"
+      class="sc-bcXHqe bPvzaS"
+      data-testid="input"
+      type="text"
+      value=""
+    />
+  </form>
+</div>
+`;

@@ -1,7 +1,8 @@
 import { HTMLInputTypeAttribute } from "react";
 import { StyledInput } from "./styles";
+import { ComponentProps } from "../types";
 
-export interface InputProps {
+export interface InputProps extends ComponentProps {
   disabled?: boolean;
   name?: string;
   isInvalid?: boolean;
@@ -12,5 +13,5 @@ export interface InputProps {
 }
 
 export const Input: React.FC<InputProps> = ({ type = "text", ...rest }) => {
-  return <StyledInput type={type} {...rest} />;
+  return <StyledInput data-testid="input" type={type} {...rest} />;
 };

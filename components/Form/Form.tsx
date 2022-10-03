@@ -1,7 +1,8 @@
 import { ReactNode } from "react";
 import { FormContainer } from "./styles";
+import { ComponentProps } from "../types";
 
-export interface FormProps {
+export interface FormProps extends ComponentProps {
   children: ReactNode;
   name: string;
   noValidate?: boolean;

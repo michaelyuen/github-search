@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input matches snapshot 1`] = `
+<div>
+  <input
+    aria-label="mock aria label"
+    class="sc-bcXHqe bPvzaS"
+    data-testid="input"
+    type="text"
+  />
+</div>
+`;

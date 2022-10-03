@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchResults matches snapshot 1`] = `
+<div>
+  <div
+    aria-label="mock aria label"
+    class="sc-eDvSVe dFGoxm"
+  >
+    <h2>
+      mock title
+    </h2>
+    <p />
+  </div>
+</div>
+`;

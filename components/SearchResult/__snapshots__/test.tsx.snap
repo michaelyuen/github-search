@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchResult matches snapshot 1`] = `
+<div>
+  <div
+    aria-label="mock aria label"
+    class="sc-bcXHqe cvUrJh"
+    id="0"
+  >
+    <div
+      class="sc-gswNZR gWuiTJ"
+    >
+      <h3>
+        <a
+          href="https://google.com"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          name
+        </a>
+      </h3>
+      <div>
+        mock description
+      </div>
+    </div>
+    <div
+      class="sc-dkrFOg fDybTg"
+    >
+      <p>
+        Stars:
+      </p>
+      <p>
+        0
+      </p>
+    </div>
+    <div
+      class="sc-hLBbgP lmCxBU"
+    >
+      <p>
+        License:
+      </p>
+      <p>
+        mit
+      </p>
+    </div>
+  </div>
+</div>
+`;

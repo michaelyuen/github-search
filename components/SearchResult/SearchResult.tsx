@@ -5,8 +5,10 @@ import {
   SearchResultContainer,
   Stars,
 } from "./styles";
+import { ComponentProps } from "../types";
 
-export interface SearchResult {
+export interface SearchResultProps extends Omit<ComponentProps, "aria-label"> {
+  "aria-label"?: string;
   description: string;
   id: string;
   license: string | null;
@@ -15,15 +17,17 @@ export interface SearchResult {
   url: string;
 }
 
-export const SearchResult: React.FC<SearchResult> = ({
+export const SearchResult: React.FC<SearchResultProps> = ({
+  ["aria-label"]: ariaLabel,
   description,
   license,
   name,
   stars,
   url,
+  ...props
 }) => {
   return (
-    <SearchResultContainer>
+    <SearchResultContainer aria-label={ariaLabel || name} {...props}>
       <NameAndDescription>
         <h3>
           <a href={url} rel="noopener noreferrer" target="_blank">

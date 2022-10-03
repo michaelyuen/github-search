@@ -20,6 +20,7 @@ export const SearchForm: React.FC<SearchFormProps> = ({
 }) => {
   return (
     <SearchFormContainer
+      aria-label="GitHub Search Form"
       name="GitHub Search Form"
       onSubmit={onSubmit}
       {...rest}
