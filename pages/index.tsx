@@ -86,6 +86,11 @@ const Home: NextPage<HomeProps> = ({
 export default Home;
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
+  context.res.setHeader(
+    "Cache-Control",
+    "public, s-maxage=10, stale-while-revalidate=59"
+  );
+
   const query = getFirstQueryParam(context.query?.q ?? "");
   if (query) {
     const { data, error } = await search(query);
