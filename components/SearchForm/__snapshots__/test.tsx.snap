@@ -13,7 +13,7 @@ exports[`SearchForm matches snapshot 1`] = `
     </h2>
     <input
       aria-label="Search using GitHub's advanced search syntax"
-      class="sc-bcXHqe bPvzaS"
+      class="sc-bcXHqe iggXoH"
       data-testid="input"
       type="text"
       value=""

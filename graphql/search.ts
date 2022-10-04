@@ -9,7 +9,7 @@ const searchQuery = gql`
           descriptionHTML
           id
           licenseInfo {
-            name
+            key
           }
           nameWithOwner
           stargazerCount
@@ -33,7 +33,7 @@ export interface Data {
 }
 
 interface License {
-  name: string;
+  key: string;
 }
 
 interface Repository {

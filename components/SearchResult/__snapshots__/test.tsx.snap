@@ -2,47 +2,59 @@
 
 exports[`SearchResult matches snapshot 1`] = `
 <div>
-  <div
-    aria-label="mock aria label"
-    class="sc-bcXHqe cvUrJh"
-    id="0"
-  >
-    <div
-      class="sc-gswNZR gWuiTJ"
+  <ul>
+    <li
+      aria-label="mock aria label"
+      class="sc-bcXHqe fJGIbY"
+      id="0"
     >
-      <h3>
-        <a
-          href="https://google.com"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          name
-        </a>
-      </h3>
-      <div>
-        mock description
+      <div
+        class="sc-gswNZR kAtizF"
+      >
+        <h3>
+          <a
+            href="https://google.com"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <span>
+              name
+              /
+            </span>
+            <span>
+              owner
+            </span>
+          </a>
+        </h3>
+        <div>
+          mock description
+        </div>
       </div>
-    </div>
-    <div
-      class="sc-dkrFOg fDybTg"
-    >
-      <p>
-        Stars:
-      </p>
-      <p>
-        0
-      </p>
-    </div>
-    <div
-      class="sc-hLBbgP lmCxBU"
-    >
-      <p>
-        License:
-      </p>
-      <p>
-        mit
-      </p>
-    </div>
-  </div>
+      <div
+        class="sc-dkrFOg eTqXsG"
+      >
+        <p>
+          Stars:
+        </p>
+        <p>
+          <a
+            href="https://google.com/stargazers"
+          >
+            0
+          </a>
+        </p>
+      </div>
+      <div
+        class="sc-hLBbgP hWJglC"
+      >
+        <p>
+          License:
+        </p>
+        <p>
+          mit
+        </p>
+      </div>
+    </li>
+  </ul>
 </div>
 `;

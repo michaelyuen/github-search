@@ -13,6 +13,7 @@ export interface SearchResultProps extends Omit<ComponentProps, "aria-label"> {
   id: string;
   license: string | null;
   name: string;
+  owner: string;
   stars: number;
   url: string;
 }
@@ -22,6 +23,7 @@ export const SearchResult: React.FC<SearchResultProps> = ({
   description,
   license,
   name,
+  owner,
   stars,
   url,
   ...props
@@ -31,14 +33,17 @@ export const SearchResult: React.FC<SearchResultProps> = ({
       <NameAndDescription>
         <h3>
           <a href={url} rel="noopener noreferrer" target="_blank">
-            {name}
+            <span>{name}/</span>
+            <span>{owner}</span>
           </a>
         </h3>
         <div dangerouslySetInnerHTML={{ __html: description }} />
       </NameAndDescription>
       <Stars>
         <p>Stars:</p>
-        <p>{stars}</p>
+        <p>
+          <a href={`${url}/stargazers`}>{stars}</a>
+        </p>
       </Stars>
       <License>
         <p>License:</p>

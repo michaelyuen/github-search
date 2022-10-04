@@ -12,7 +12,7 @@ import { getFirstQueryParam, setQueryParameters } from "../utils";
 
 interface HomeProps {
   initialError?: string;
-  initialQuery: string;
+  initialQuery?: string;
   initialResults?: SearchResultsProps["results"];
 }
 
@@ -22,7 +22,8 @@ const Home: NextPage<HomeProps> = ({
   initialResults,
 }) => {
   const [error, setError] = useState(initialError);
-  const [query, setQuery] = useState(initialQuery);
+  const [hasSearched, setHasSearched] = useState(!!initialQuery);
+  const [query, setQuery] = useState(initialQuery ?? "");
   const [results, setResults] = useState(initialResults);
   const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setQuery(event.target.value);
@@ -31,6 +32,7 @@ const Home: NextPage<HomeProps> = ({
     event.preventDefault();
     setQueryParameters(query);
     executeSearch(query);
+    setHasSearched(true);
   };
 
   const executeSearch = async (query: string) => {
@@ -58,17 +60,17 @@ const Home: NextPage<HomeProps> = ({
 
       <main>
         <h1>GitHub Search</h1>
-        {/* handle this better */}
-        {error && <p>{error}</p>}
         <SearchForm
           onChange={onChange}
           onSubmit={onSubmit}
           query={query}
           title="Advanced Search"
         />
+        {/* handle this better */}
+        {error && <p>{error}</p>}
         <SearchResults
           aria-label="Search Results"
-          noResultsMessage="No Results..."
+          hasSearched={hasSearched}
           results={results}
           title="Search Results"
         />
@@ -81,12 +83,15 @@ export default Home;
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const query = getFirstQueryParam(context.query?.q ?? "");
-  const { data, error } = await search(query);
-  return {
-    props: {
-      initialError: error?.toString() ?? null,
-      initialQuery: query,
-      initialResults: normalizeRepos(data),
-    },
-  };
+  if (query) {
+    const { data, error } = await search(query);
+    return {
+      props: {
+        initialError: error?.toString() ?? null,
+        initialQuery: query,
+        initialResults: normalizeRepos(data),
+      },
+    };
+  }
+  return { props: {} };
 };

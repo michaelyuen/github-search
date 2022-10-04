@@ -11,8 +11,11 @@ export const normalizeRepos = (
   return data.repos.nodes.map((repo) => ({
     description: repo.descriptionHTML,
     id: repo.id,
-    license: repo.licenseInfo?.name ?? null,
-    name: repo.nameWithOwner,
+    license: repo.licenseInfo?.key
+      ? `${repo.licenseInfo.key.toUpperCase()} license`
+      : "N/A",
+    name: repo.nameWithOwner.split("/")[1],
+    owner: repo.nameWithOwner.split("/")[0],
     stars: repo.stargazerCount,
     url: repo.url,
   }));

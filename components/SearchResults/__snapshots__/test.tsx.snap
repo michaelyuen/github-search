@@ -4,12 +4,24 @@ exports[`SearchResults matches snapshot 1`] = `
 <div>
   <div
     aria-label="mock aria label"
-    class="sc-eDvSVe dFGoxm"
+    class="sc-eDvSVe gVivYQ"
   >
     <h2>
       mock title
     </h2>
-    <p />
+    <div>
+      <p>
+        Please enter a query above.
+         
+        <a
+          href="https://docs.github.com/en/enterprise-cloud@latest/search-github/searching-on-github/searching-for-repositories"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          See here for syntax.
+        </a>
+      </p>
+    </div>
   </div>
 </div>
 `;

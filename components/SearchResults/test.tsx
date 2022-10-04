@@ -8,7 +8,7 @@ describe("SearchResults", () => {
     render(
       <SearchResults
         aria-label="mock aria label"
-        noResultsMessage=""
+        hasSearched={false}
         results={[]}
         title="mock title"
       />
@@ -20,7 +20,7 @@ describe("SearchResults", () => {
     const { container } = render(
       <SearchResults
         aria-label="mock aria label"
-        noResultsMessage=""
+        hasSearched={false}
         title="mock title"
       />
     );
@@ -31,7 +31,7 @@ describe("SearchResults", () => {
     const { container } = render(
       <SearchResults
         aria-label="mock aria label"
-        noResultsMessage=""
+        hasSearched={false}
         title="mock title"
       />
     );
@@ -42,7 +42,7 @@ describe("SearchResults", () => {
     render(
       <SearchResults
         aria-label="mock aria label"
-        noResultsMessage=""
+        hasSearched={true}
         results={normalizedResults}
         title="mock title"
       />

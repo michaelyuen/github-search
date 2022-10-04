@@ -5,45 +5,54 @@ import { SearchResult } from "./SearchResult";
 describe("SearchResult", () => {
   test("renders", () => {
     render(
-      <SearchResult
-        aria-label="mock aria label"
-        description="mock description"
-        id="0"
-        license="mit"
-        name="name"
-        stars={0}
-        url="https://google.com"
-      />
+      <ul>
+        <SearchResult
+          aria-label="mock aria label"
+          description="mock description"
+          id="0"
+          license="mit"
+          name="name"
+          owner="owner"
+          stars={0}
+          url="https://google.com"
+        />
+      </ul>
     );
     expect(screen.getByLabelText("mock aria label")).toBeInTheDocument();
   });
 
   test("matches snapshot", () => {
     const { container } = render(
-      <SearchResult
-        aria-label="mock aria label"
-        description="mock description"
-        id="0"
-        license="mit"
-        name="name"
-        stars={0}
-        url="https://google.com"
-      />
+      <ul>
+        <SearchResult
+          aria-label="mock aria label"
+          description="mock description"
+          id="0"
+          license="mit"
+          name="name"
+          owner="owner"
+          stars={0}
+          url="https://google.com"
+        />
+      </ul>
     );
     expect(container).toMatchSnapshot();
   });
 
   test("has no a11y violations", async () => {
     const { container } = render(
-      <SearchResult
-        aria-label="mock aria label"
-        description="mock description"
-        id="0"
-        license="mit"
-        name="name"
-        stars={0}
-        url="https://google.com"
-      />
+      <ul>
+        <SearchResult
+          aria-label="mock aria label"
+          description="mock description"
+          id="0"
+          license="mit"
+          name="name"
+          owner="owner"
+          stars={0}
+          url="https://google.com"
+        />
+      </ul>
     );
     expect(await axe(container)).toHaveNoViolations();
   });

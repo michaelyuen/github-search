@@ -11,6 +11,7 @@ export const setQueryParameters = (query: string) => {
     if (!!query) {
       queryParameters.set("q", query);
     }
+    // Change to pushState, but need to detect browser back/forward button too
     window.history.replaceState(
       {},
       "",
