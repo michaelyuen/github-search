@@ -21,7 +21,6 @@ const searchQuery = gql`
   }
 `;
 
-// update type
 export const search = async (query: string) =>
   client.query(searchQuery, { query }).toPromise();
 

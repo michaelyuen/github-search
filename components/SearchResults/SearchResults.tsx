@@ -16,9 +16,12 @@ const defaultMessage = (
 );
 const defaultNoResultsMessage =
   "No results. Please update your query and try again.";
+const loadingItems = Array.from("x".repeat(10));
+
 export interface SearchResultsProps extends ComponentProps {
   initialMessage?: string | JSX.Element;
   hasSearched: boolean;
+  isLoading: boolean;
   noResultsMessage?: string | JSX.Element;
   results?: SearchResultProps[];
   title: string;
@@ -27,6 +30,7 @@ export interface SearchResultsProps extends ComponentProps {
 export const SearchResults: React.FC<SearchResultsProps> = ({
   initialMessage = defaultMessage,
   hasSearched,
+  isLoading,
   noResultsMessage = defaultNoResultsMessage,
   results,
   title,
@@ -36,9 +40,15 @@ export const SearchResults: React.FC<SearchResultsProps> = ({
   return (
     <SearchResultsContainer {...props}>
       <h2>{title}</h2>
-      {!hasSearched && <div>{initialMessage}</div>}
-      {hasSearched && !hasResults && <p>{noResultsMessage}</p>}
-      {hasSearched && hasResults && (
+      {isLoading &&
+        loadingItems.map((_, i) => (
+          // Explicit ignore because `isLoading` will render a skeleton and not use any data
+          // @ts-ignore
+          <SearchResult isLoading key={i} />
+        ))}
+      {!isLoading && !hasSearched && <div>{initialMessage}</div>}
+      {!isLoading && hasSearched && !hasResults && <p>{noResultsMessage}</p>}
+      {!isLoading && hasSearched && hasResults && (
         <ul>
           {results.map((result, i) => (
             <SearchResult key={result.id} {...result} />

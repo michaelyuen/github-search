@@ -23,6 +23,7 @@ const Home: NextPage<HomeProps> = ({
 }) => {
   const [error, setError] = useState(initialError);
   const [hasSearched, setHasSearched] = useState(!!initialQuery);
+  const [isLoading, setLoading] = useState(false);
   const [query, setQuery] = useState(initialQuery ?? "");
   const [results, setResults] = useState(initialResults);
   const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -30,6 +31,7 @@ const Home: NextPage<HomeProps> = ({
   };
   const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    setLoading(true);
     setQueryParameters(query);
     executeSearch(query);
     setHasSearched(true);
@@ -45,6 +47,7 @@ const Home: NextPage<HomeProps> = ({
     if (results) {
       setResults(results);
     }
+    setLoading(false);
   };
 
   return (
@@ -71,6 +74,7 @@ const Home: NextPage<HomeProps> = ({
         <SearchResults
           aria-label="Search Results"
           hasSearched={hasSearched}
+          isLoading={isLoading}
           results={results}
           title="Search Results"
         />

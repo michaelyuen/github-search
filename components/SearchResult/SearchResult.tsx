@@ -3,6 +3,7 @@ import {
   License,
   NameAndDescription,
   SearchResultContainer,
+  Skeleton,
   Stars,
 } from "./styles";
 import { ComponentProps } from "../types";
@@ -11,7 +12,7 @@ export interface SearchResultProps extends Omit<ComponentProps, "aria-label"> {
   "aria-label"?: string;
   description: string;
   id: string;
-  license: string | null;
+  license: string;
   name: string;
   owner: string;
   stars: number;
@@ -21,6 +22,7 @@ export interface SearchResultProps extends Omit<ComponentProps, "aria-label"> {
 export const SearchResult: React.FC<SearchResultProps> = ({
   ["aria-label"]: ariaLabel,
   description,
+  isLoading,
   license,
   name,
   owner,
@@ -28,6 +30,24 @@ export const SearchResult: React.FC<SearchResultProps> = ({
   url,
   ...props
 }) => {
+  if (isLoading) {
+    return (
+      <SearchResultContainer {...props}>
+        <NameAndDescription>
+          <Skeleton as="h3" height="21px" width="200px"></Skeleton>
+          <Skeleton height="1em" width="90%"></Skeleton>
+        </NameAndDescription>
+        <Stars>
+          <p>Stars:</p>
+          <Skeleton height="1em"></Skeleton>
+        </Stars>
+        <License>
+          <p>License:</p>
+          <Skeleton height="1em"></Skeleton>
+        </License>
+      </SearchResultContainer>
+    );
+  }
   return (
     <SearchResultContainer aria-label={ariaLabel || name} {...props}>
       <NameAndDescription>

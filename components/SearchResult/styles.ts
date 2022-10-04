@@ -93,3 +93,14 @@ export const License = styled.div`
     }
   }
 `;
+
+interface SkeletonProps {
+  height?: string;
+  width?: string;
+}
+export const Skeleton = styled.div`
+  background: var(--border-color);
+  border-radius: var(--border-radius);
+  height: ${({ height }: SkeletonProps) => height && height};
+  width: ${({ width }: SkeletonProps) => width && width};
+`;
