@@ -18,11 +18,11 @@ exports[`SearchResult matches snapshot 1`] = `
             target="_blank"
           >
             <span>
-              name
+              owner
               /
             </span>
             <span>
-              owner
+              name
             </span>
           </a>
         </h3>

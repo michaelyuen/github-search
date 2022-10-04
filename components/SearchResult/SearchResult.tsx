@@ -53,8 +53,8 @@ export const SearchResult: React.FC<SearchResultProps> = ({
       <NameAndDescription>
         <h3>
           <a href={url} rel="noopener noreferrer" target="_blank">
-            <span>{name}/</span>
-            <span>{owner}</span>
+            <span>{owner}/</span>
+            <span>{name}</span>
           </a>
         </h3>
         <div dangerouslySetInnerHTML={{ __html: description }} />
