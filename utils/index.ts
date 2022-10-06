@@ -68,7 +68,7 @@ export const validateQuery = (query: string): NormalizedQueryPart => {
       if (/^user:?$/.test(queryPart)) {
         return {
           isValid: false,
-          error: `Qualifier "${queryPart}" is missing the value. E.g., user:USERNAME`,
+          error: `Qualifier "${queryPart}" is missing the value (e.g., user:USERNAME).`,
           value: queryPart,
         };
         // Anything in here must match `user:*`
@@ -76,7 +76,7 @@ export const validateQuery = (query: string): NormalizedQueryPart => {
         if (RESERVED_USERNAMES.test(value)) {
           return {
             isValid: false,
-            error: `"${value}" is not a valid username. It's a reserved word.`,
+            error: `Qualifier value "${value}" is not a valid username. It's a reserved word.`,
             value: queryPart,
           };
         } else if (value.startsWith("-") || value.endsWith("-")) {
@@ -121,7 +121,7 @@ export const validateQuery = (query: string): NormalizedQueryPart => {
       if (/^stars:?$/.test(queryPart)) {
         return {
           isValid: false,
-          error: `Qualifier "${queryPart}" is missing the value. E.g., stars:n`,
+          error: `Qualifier "${queryPart}" is missing the value (e.g., stars:n).`,
           value: queryPart,
         };
         // Anything in here must match `stars:*`
