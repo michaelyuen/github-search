@@ -15,5 +15,12 @@ export interface InputProps extends ComponentProps {
 }
 
 export const Input: React.FC<InputProps> = ({ type = "text", ...rest }) => {
-  return <StyledInput data-testid="input" type={type} {...rest} />;
+  return (
+    <StyledInput
+      autoCapitalize="off"
+      spellCheck="false"
+      type={type}
+      {...rest}
+    />
+  );
 };

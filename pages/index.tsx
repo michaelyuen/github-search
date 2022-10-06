@@ -42,14 +42,16 @@ const Home: NextPage<HomeProps> = ({
   };
 
   const onKeyUp = (event: React.KeyboardEvent) => {
-    if (event.code === "Space") {
+    if (event.code === "Space" && query.trim()) {
       executeSearch(query);
     }
   };
 
   const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    executeSearch(query);
+    if (query) {
+      executeSearch(query);
+    }
   };
 
   const executeSearch = async (query: string) => {
