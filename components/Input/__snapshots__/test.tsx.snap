@@ -4,8 +4,9 @@ exports[`Input matches snapshot 1`] = `
 <div>
   <input
     aria-label="mock aria label"
+    autocapitalize="off"
     class="sc-bcXHqe iggXoH"
-    data-testid="input"
+    spellcheck="false"
     type="text"
   />
 </div>

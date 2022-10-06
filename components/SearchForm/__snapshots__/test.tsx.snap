@@ -13,9 +13,10 @@ exports[`SearchForm matches snapshot 1`] = `
     <div>
       <input
         aria-label="Search using GitHub's advanced search syntax. Only user and stars qualifiers are supported."
+        autocapitalize="off"
         class="sc-bcXHqe iggXoH"
-        data-testid="input"
         placeholder="Try user or stars qualifiers. e.g., user:atom stars:10..50"
+        spellcheck="false"
         type="text"
         value=""
       />
