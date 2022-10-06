@@ -15,6 +15,19 @@ describe("SearchForm", () => {
     expect(screen.getByLabelText("mock aria label")).toBeInTheDocument();
   });
 
+  test("renders error", () => {
+    render(
+      <SearchForm
+        aria-label="mock aria label"
+        error="Something went wrong. Please try again."
+        onChange={jest.fn()}
+        query=""
+        title="GitHub Search Form"
+      />
+    );
+    expect(screen.getByLabelText("mock aria label")).toBeInTheDocument();
+  });
+
   test("matches snapshot", () => {
     const { container } = render(
       <SearchForm

@@ -41,12 +41,6 @@ export default class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head />
-        {/* <Head>
-          <link
-            href="https://fonts.googleapis.com/css?family=Gaegu|Open+Sans:400,700|Pacifico|Merriweather&display=swap"
-            rel="stylesheet"
-          />
-        </Head> */}
         <body>
           <Main />
           <NextScript />

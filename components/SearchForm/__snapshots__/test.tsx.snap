@@ -4,20 +4,22 @@ exports[`SearchForm matches snapshot 1`] = `
 <div>
   <form
     aria-label="mock aria label"
-    class="sc-gswNZR sc-dkrFOg wQExl"
+    class="sc-gswNZR sc-hLBbgP iPeGWR"
     name="GitHub Search Form"
-    novalidate=""
   >
     <h2>
       GitHub Search Form
     </h2>
-    <input
-      aria-label="Search using GitHub's advanced search syntax"
-      class="sc-bcXHqe iggXoH"
-      data-testid="input"
-      type="text"
-      value=""
-    />
+    <div>
+      <input
+        aria-label="Search using GitHub's advanced search syntax. Only user and stars qualifiers are supported."
+        class="sc-bcXHqe iggXoH"
+        data-testid="input"
+        placeholder="Try user or stars qualifiers. e.g., user:atom stars:10..50"
+        type="text"
+        value=""
+      />
+    </div>
   </form>
 </div>
 `;

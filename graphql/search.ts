@@ -3,7 +3,7 @@ import { client } from "./client";
 
 const searchQuery = gql`
   query searchRepos($query: String!) {
-    repos: search(first: 10, query: $query, type: REPOSITORY) {
+    repos: search(first: 100, query: $query, type: REPOSITORY) {
       nodes {
         ... on Repository {
           descriptionHTML

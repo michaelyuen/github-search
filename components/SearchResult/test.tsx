@@ -39,6 +39,16 @@ describe("SearchResult", () => {
     expect(container).toMatchSnapshot();
   });
 
+  test("matches snapshot for skeleton", () => {
+    const { container } = render(
+      <ul>
+        {/* @ts-ignore */}
+        <SearchResult isLoading />
+      </ul>
+    );
+    expect(container).toMatchSnapshot();
+  });
+
   test("has no a11y violations", async () => {
     const { container } = render(
       <ul>

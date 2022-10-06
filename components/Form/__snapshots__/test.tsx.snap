@@ -6,7 +6,6 @@ exports[`Form matches snapshot 1`] = `
     aria-label="mock aria label"
     class="sc-bcXHqe"
     name="Mock Name"
-    novalidate=""
   >
     0
   </form>

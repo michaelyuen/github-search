@@ -2,9 +2,12 @@ import { SearchResultsContainer } from "./styles";
 import { SearchResult, SearchResultProps } from "../SearchResult";
 import { ComponentProps } from "../types";
 
-const defaultMessage = (
-  <p>
-    Please enter a query above.{" "}
+const syntaxLink = (
+  <>
+    <span>
+      This search only supports the &ldquo;user&rdquo; and &ldquo;stars&rdquo;
+      qualifiers.
+    </span>{" "}
     <a
       href="https://docs.github.com/en/enterprise-cloud@latest/search-github/searching-on-github/searching-for-repositories"
       rel="noopener noreferrer"
@@ -12,16 +15,17 @@ const defaultMessage = (
     >
       See here for syntax.
     </a>
-  </p>
+  </>
 );
-const defaultNoResultsMessage =
-  "No results. Please update your query and try again.";
+const defaultMessage = <p>Please enter a query above. {syntaxLink}</p>;
+const defaultNoResultsMessage = (
+  <p>No results. Please update your query and try again. {syntaxLink}</p>
+);
 const loadingItems = Array.from("x".repeat(10));
 
 export interface SearchResultsProps extends ComponentProps {
   initialMessage?: string | JSX.Element;
   hasSearched: boolean;
-  isLoading: boolean;
   noResultsMessage?: string | JSX.Element;
   results?: SearchResultProps[];
   title: string;
@@ -47,7 +51,9 @@ export const SearchResults: React.FC<SearchResultsProps> = ({
           <SearchResult isLoading key={i} />
         ))}
       {!isLoading && !hasSearched && <div>{initialMessage}</div>}
-      {!isLoading && hasSearched && !hasResults && <p>{noResultsMessage}</p>}
+      {!isLoading && hasSearched && !hasResults && (
+        <div>{noResultsMessage}</div>
+      )}
       {!isLoading && hasSearched && hasResults && (
         <ul>
           {results.map((result, i) => (

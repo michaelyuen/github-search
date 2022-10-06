@@ -5,14 +5,9 @@ import { ComponentProps } from "../types";
 export interface FormProps extends ComponentProps {
   children: ReactNode;
   name: string;
-  noValidate?: boolean;
   onSubmit?(event: React.FormEvent<HTMLFormElement>): void;
 }
 
 export const Form: React.FC<FormProps> = ({ children, ...rest }) => {
-  return (
-    <FormContainer noValidate {...rest}>
-      {children}
-    </FormContainer>
-  );
+  return <FormContainer {...rest}>{children}</FormContainer>;
 };

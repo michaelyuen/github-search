@@ -58,3 +58,50 @@ exports[`SearchResult matches snapshot 1`] = `
   </ul>
 </div>
 `;
+
+exports[`SearchResult matches snapshot for skeleton 1`] = `
+<div>
+  <ul>
+    <li
+      class="sc-bcXHqe fJGIbY"
+    >
+      <div
+        class="sc-gswNZR kAtizF"
+      >
+        <h3
+          class="sc-eDvSVe eVZopV"
+          height="21px"
+          width="200px"
+        />
+        <div
+          class="sc-eDvSVe lcvYht"
+          height="1em"
+          width="90%"
+        />
+      </div>
+      <div
+        class="sc-dkrFOg eTqXsG"
+      >
+        <p>
+          Stars:
+        </p>
+        <div
+          class="sc-eDvSVe iVskNN"
+          height="1em"
+        />
+      </div>
+      <div
+        class="sc-hLBbgP hWJglC"
+      >
+        <p>
+          License:
+        </p>
+        <div
+          class="sc-eDvSVe iVskNN"
+          height="1em"
+        />
+      </div>
+    </li>
+  </ul>
+</div>
+`;

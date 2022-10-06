@@ -1,4 +1,4 @@
-import { HTMLInputTypeAttribute } from "react";
+import React, { HTMLInputTypeAttribute } from "react";
 import { StyledInput } from "./styles";
 import { ComponentProps } from "../types";
 
@@ -8,6 +8,8 @@ export interface InputProps extends ComponentProps {
   isInvalid?: boolean;
   onBlur?(event: React.FormEvent<HTMLInputElement>): void;
   onChange?(event: React.FormEvent<HTMLInputElement>): void;
+  onKeyUp?(event: React.KeyboardEvent<HTMLInputElement>): void;
+  placeholder?: string;
   type?: HTMLInputTypeAttribute;
   value?: string;
 }

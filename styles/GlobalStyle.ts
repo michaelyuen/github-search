@@ -11,6 +11,7 @@ export const GlobalStyle = createGlobalStyle`
     --border-radius: 6px;
     --color: #24292f;
     --card-background-color: #f6f8fa;
+    --error-color: #f85149;
     --link-color: #0969da;
   }
 
@@ -21,7 +22,8 @@ export const GlobalStyle = createGlobalStyle`
       --border-radius: 6px;
       --color: #c9d1d9;
       --card-background-color: #161b22;
-      --link-color: #58a6ff
+      --error-color: #f85149;
+      --link-color: #58a6ff;
     }
   }
 
