@@ -24,7 +24,7 @@ You should be able to search for repositories on GitHub and narrow the results b
 - Persist results on refresh
 - Add ‘search’ query param into page url to support bookmarking search term results
 
-## One page design
+## One Page Design
 
 ![one-page-design](./one-page-design.png)
 

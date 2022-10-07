@@ -27,14 +27,42 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 ### Unit - Watching
 
 ```bash
-  yarn test:unit
+yarn test:unit
 ```
 
 ### Unit - Coverage Report
 
 ```bash
-  yarn test:unit:coverage
+yarn test:unit:coverage
 ```
+
+### Integraton
+
+```bash
+yarn test:e2e
+```
+
+ℹ️ See Known Issues for more details
+
+## Lint
+
+```bash
+yarn lint
+```
+
+## Build for Production
+
+```bash
+yarn build
+```
+
+## Run Production Build Locally
+
+```bash
+yarn start
+```
+
+⚠️ Must build for production first
 
 ## Features
 
@@ -55,7 +83,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 **ℹ️ If you find any other issues, please open an Issue!**
 
-## Known Limitations & Future enhancements
+## Known Limitations & Future Enhancements
 
 - The search is hardcoded to only query for Repository results. In the future, this could be expanded to support other result types.
 - The search is hardcoded to return 50 results. In the future, support could be added for pagination or lazy-loading. Also, allowing users to choose the number of results or page size could be worth considering.
