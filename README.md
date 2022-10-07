@@ -22,6 +22,20 @@ yarn dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+## Run Tests
+
+### Unit - Watching
+
+```bash
+  yarn test:unit
+```
+
+### Unit - Coverage Report
+
+```bash
+  yarn test:unit:coverage
+```
+
 ## Features
 
 - Search using `user` and/or `stars` qualifiers with advanced validation for the special syntax ([and well-tested!](./utils/test.ts))
